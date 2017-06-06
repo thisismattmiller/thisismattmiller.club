@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>thisismattmiller.club</title>
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script type="text/javascript">
+		function createCookie(name,value,days) {
+		    var expires = "";
+		    if (days) {
+		        var date = new Date();
+		        date.setTime(date.getTime() + (days*24*60*60*1000));
+		        expires = "; expires=" + date.toUTCString();
+		    }
+		    document.cookie = name + "=" + value + expires + "; path=/";
+		}
+
+		function readCookie(name) {
+		    var nameEQ = name + "=";
+		    var ca = document.cookie.split(';');
+		    for(var i=0;i < ca.length;i++) {
+		        var c = ca[i];
+		        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		    }
+		    return null;
+		}
+
+		function eraseCookie(name) {
+		    createCookie(name,"",-1);
+		}
+
+		function joinDaClub(){
+			createCookie('daClub',true,1000);
+			document.getElementById("ask").style.display = "none";
+			document.getElementById("inDaClub").style.display = "block";
+
+		}
+		function leaveDaClub(){
+			eraseCookie('daClub')
+			document.getElementById("ask").style.display = "block";
+			document.getElementById("inDaClub").style.display = "none";
+			document.getElementById("inDaHaters").style.display = "none";
+		}
+		function fuckDaClub(){
+			createCookie('daClub',false,1000);
+			document.getElementById("ask").style.display = "none";
+			document.getElementById("inDaClub").style.display = "none";
+			document.getElementById("inDaHaters").style.display = "block";
+		}		
+
+	</script>
+
+
+</head>
+
+<body id="home" style="background-image: url(img/stars1.gif)">
+
+
+<div id="ask">
+	<div style="text-align: center">
+	<br><br><br>
+	<img src="img/thisismattmi_20711.gif">
+	<br><br>
+	<img src="img/mline.gif">
+	<h1 style="color: #00f400;">Do you want to join thisismattmiller.club</h1>
+
+	<a id="myLink" href="#" onclick="joinDaClub();return false;"><img src="img/yes.png" style="height: 100px; display: inline-block;"></a>
+	<a id="myLink" href="#" onclick="fuckDaClub();return false;"><img src="img/no.png" style="height: 100px; display: inline-block;"></a>
+
+	<br><br>
+	<img src="img/mline.gif">
+	</div>
+</div>
+<div id="inDaClub" style="display: none">
+	<div style="text-align: center">
+	<br><br><br>
+	<img src="img/welcome2.gif"><br>
+	<img src="img/coollogo_com-12187777.gif">
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<a id="myLink" style="color: #00f400;" href="#" onclick="leaveDaClub();return false;">leave da club</a>
+	</div>
+</div>
+<div id="inDaHaters" style="display: none">
+	<div style="text-align: center">
+	<br><br><br>
+	<img src="img/thisismattmi_20711.gif"><br>
+	<img src="img/mline.gif"><br>
+	<br><br><br><br>
+	<img src="img/HatersLeaveNow.gif">
+
+
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<a id="myLink" style="color: #00f400;" href="#" onclick="leaveDaClub();return false;">join da club</a>
+	</div>
+</div>
+<script type="text/javascript">
+	if (readCookie('daClub')=='true'){
+		document.getElementById("ask").style.display = "none";
+		document.getElementById("inDaClub").style.display = "block";
+	}
+	if (readCookie('daClub')=='false'){
+		document.getElementById("ask").style.display = "none";
+		document.getElementById("inDaHaters").style.display = "block";
+	}
+
+</script>
+
+
+</body>
+</html>
